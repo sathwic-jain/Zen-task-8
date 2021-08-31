@@ -1,0 +1,82 @@
+//Movie class
+
+class movie{
+    constructor(title,studio,rating="PG")
+    {
+        this.title=title;
+        this.studio=studio;
+        this.rating=rating;
+    }
+   static getPG(...moviearray)
+    {
+        let len=moviearray.length;
+        let resultarr=[]
+        for(let i=0;i<len;i++)
+        {
+            if(moviearray[i].rating=="PG"){
+
+             resultarr.push(moviearray[i]);
+            }
+
+        }
+        
+        return resultarr;
+
+    }
+   
+}
+var mov1 = new movie("X-men","marvel-studios")
+var mov2=new movie("loki","marvel-studios","PG13")
+var mov3=new movie("Casino Royale","Eon productions","PG13")
+
+var resultarr=(movie.getPG(mov1,mov2,mov3));//storing the return array into a new array
+for(let i=0;i<resultarr.length;i++)
+{
+    console.log(resultarr[i]);//displaying the movies with PG rating
+}
+
+//3.Person class
+
+class person{
+    constructor(name,age,current_address,permenant_address,occupation,nationality,married_status)
+    {
+        this.name=name;
+        this.age=age;
+        this.currrent_address=current_address;
+        this.permenant_address=permenant_address;
+        this.occupation=occupation;
+        this.nationality=nationality;
+        this.married_status=married_status;
+    }
+}
+
+//Uber price
+class uber_price{
+    constructor(base_fare,surge_fare,ride_in_minutes,per_min_charge,miles_rode,per_mile_charge,surge,type_of_car)
+    {
+        this.base_fare=base_fare;
+        this.pmc=per_min_charge;
+        this.pmilec=per_mile_charge;
+        this.surge_fare=surge_fare;
+        this.rms=ride_in_minutes;
+        this.miles=miles_rode;
+        this.surge=surge;
+        this.car=type_of_car;
+    }
+    getPrice()
+    {
+        if(this.surge=='Y')
+        {
+        var price=(this.base*this.surge_fare)+(rms*pmc)+(miles*pmilec)
+        }else
+        var price=(this.base)+(rms*pmc)+(miles*pmilec)
+        if(price<this.base_fare) price=this.base_fare;
+
+        if(this.car===UberX) return price;
+        else if(this.car=="SUV") return (+price +100);
+
+
+         return (price);
+        
+    }
+}
